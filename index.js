@@ -6,7 +6,7 @@ require("./Config")
 const typeDefs = gql`
 type User{
     id:ID!
-    username:String
+    userName:String
     email:String
 }
 type Query {
@@ -20,7 +20,7 @@ type Mutation {
 
 const resolvers ={
     Query:{
-        getUsers: async () => await User.findById({}).exec()
+        getUsers: async () => await User.find({}).exec()
     },
     Mutation:{
         addUsers:async (_, args) => {
